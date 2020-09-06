@@ -11,7 +11,6 @@ import {
 import Nav from './components/Nav';
 import SearchForm from './components/SearchForm';
 import PhotoList from './components/PhotoList';
-import NotFound from './components/NotFound';
 
 
 class App extends Component {
@@ -56,7 +55,6 @@ class App extends Component {
               <Switch>
                   <Route exact path="/" render={ ()=> <PhotoList data={this.state} /> } />
                   <Route path="/:topic" render={ ()=> <PhotoList data={this.state} /> } />
-                  <Route component={NotFound} />
               </Switch>
         }
 

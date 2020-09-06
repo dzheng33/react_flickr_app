@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Photo from './Photo';
+import NotFound from './NotFound';
 
 
 const PhotoList = (props) => {
@@ -15,12 +16,18 @@ const PhotoList = (props) => {
 
     
     const results = props.data.photos;
-    let photos = results.map( photo => {
-            return <Photo 
+    let photos; 
+    if(results.length > 0) {
+        photos = results.map( photo => {
+            return <Photo
                  data={photo} 
                  key={photo.id}
              />;
-         }); 
+        }); 
+    }else {
+        photos = <NotFound />;
+    }
+   
     
  
 
